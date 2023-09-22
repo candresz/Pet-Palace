@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Shop Name</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="shortcut icon" href="./img/bone.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div>
+      <header id="mainHeader">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">LOGO</a>
+          </div>
+        </nav>
+        <div class="containerHeaderMsg">
+          <h1 class="headerMsg">
+            <span>¡Bienvenido</span>
+            a nuestro Pet Shop en línea! Haz clic, navega y descubre todo para
+            tu mascota. ¡Comienza ya!
+          </h1>
+          <div
+            class="d-flex justify-content-center align-items-center gap-2 mt-3 containerBtn"
+          >
+            <button type="button">Farmacia</button>
+            <button type="button">Productos</button>
+          </div>
+        </div>
+      </header>
+      <main class="min-vh-50 m-4">
+        <section
+          class="d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-row about-section"
+        >
+          <div class="about-item">
+            <img
+              src="./img/pet-shop.png"
+              alt="imagen acerca de nosotros"
+              class="about-image"
+            />
+            <h2 class="about-title">Acerca de nosotros</h2>
+            <p class="about-description">
+              Somos amantes de las mascotas. En nuestro Pet Shop, estamos
+              dedicados a tu amigo peludo. Descubre calidad y amor en cada
+              producto. Bienvenido a nuestra familia.
+            </p>
+          </div>
+
+          <div class="about-item">
+            <img
+              src="./img/veterinary.png"
+              alt="imagen acerca de nuestra farmacia"
+              class="about-image"
+            />
+            <h2 class="about-title">Farmacia Veterinaria Confiable</h2>
+            <p class="about-description">
+              Mantén a tu mascota saludable con nuestra amplia selección de
+              medicamentos y productos veterinarios. Contamos con productos de
+              calidad y asesoramiento profesional para garantizar el bienestar
+              de tu amigo peludo.
+            </p>
+          </div>
+
+          <div class="about-item">
+            <img
+              src="./img/dog.png"
+              alt="imagen acerca de nuestra farmacia"
+              class="about-image"
+            />
+            <h2 class="about-title">Asesoramiento Nutricional</h2>
+            <p class="about-description">
+              La alimentación es clave para la salud de tu mascota. Nuestros
+              especialistas te guiarán para elegir los mejores alimentos y
+              suplementos, adaptados a las necesidades específicas de tu
+              compañero peludo.
+            </p>
+          </div>
+        </section>
+        <section class="mt-3">
+          <h2 class="carousel-title">Nuestros Clientes</h2>
+          <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="./img/group-portrait-adorable-puppies.jpg"
+                  class="d-block w-100 carouselImg"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./img/anoir-chafik-2_3c4dIFYFU-unsplash.jpg"
+                  class="d-block w-100 carouselImg"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./img/tran-mau-tri-tam--81lVsfM4gQ-unsplash.jpg"
+                  class="d-block w-100 carouselImg"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleFade"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleFade"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer
+        id="footer"
+        class="d-flex justify-content-between align-items-center p-3"
+      >
+        <div class="d-flex gap-3 imgfooter">
+          <img
+            class="footerpics"
+            src="./img/facebook.png"
+            alt="Facebook picture"
+          />
+          <img
+            class="footerpics"
+            src="./img/instagram.png"
+            alt="Instagram picture"
+          />
+          <img
+            class="footerpics"
+            src="./img/whatsapp.png"
+            alt="Whatsapp picture"
+          />
+        </div>
+        <a class="dflex" href="#">
+          <i class="bi bi-envelope-at envelope"></i>
+        </a>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

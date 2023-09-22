@@ -1,0 +1,169 @@
+:root {
+  --maincolor: #ffac08;
+  --secondcolor: #d2d904;
+  --thirdcolor: #f20574;
+  --fourthcolor: #8c031c;
+  --secondFont: "Oswald", sans-serif;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+.cardFont {
+  font-family: var(--secondFont);
+}
+.cardsContainer {
+  margin-top: 2rem;
+}
+#mainHeader {
+  background-image: url(../img/backgroundheader.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 25rem;
+}
+button {
+  background-color: var(--thirdcolor);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--fourthcolor);
+}
+/* Definir los colores de la animación */
+@keyframes changeColor {
+  0% {
+    color: var(--maincolor);
+  }
+  25% {
+    color: var(--secondcolor);
+  }
+  50% {
+    color: var(--thirdcolor);
+  }
+  75% {
+    color: var(--fourthcolor);
+  }
+  100% {
+    color: var(--maincolor);
+  }
+}
+
+/* Aplicar la animación al título h2 */
+h2.carousel-title {
+  font-family: var(--secondFont);
+  animation: changeColor 5s linear infinite;
+  /* 5s para cambiar de color en un ciclo de 5 segundos */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+.footerpics {
+  max-width: 3rem;
+}
+#footer {
+  max-height: 10rem;
+}
+
+.containerHeaderMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  min-height: 25rem;
+  max-width: 10rem;
+  margin: 0 3rem;
+}
+.headerMsg {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+/* Estilos generales de la sección */
+.about-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  min-height: 30rem;
+  background-color: #d2d904;
+}
+
+/* Estilos de cada elemento "Acerca de nosotros" */
+.about-item {
+  text-align: center;
+}
+
+/* Estilos de las imágenes */
+.about-image {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+/* Estilos de los títulos */
+.about-title {
+  font-family: var(--secondFont);
+  font-size: 2.5rem;
+
+  color: #8c031c;
+}
+
+/* Estilos de las descripciones */
+.about-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.4;
+}
+span {
+  font-family: var(--secondFont);
+  font-weight: bold;
+  color: #f20574;
+  font-size: 3.5rem;
+}
+.carouselImg {
+  width: 100%; /* Ancho del 100% */
+  min-height: 25rem;
+  max-height: 25rem;
+  object-position: center;
+  object-fit: cover; /* Ajusta la imagen sin distorsionarla, recortándola si es necesario */
+}
+
+.envelope {
+  font-size: 3rem;
+  text-decoration: none;
+  color: black;
+}
+.carouselSection {
+  max-height: 35rem;
+}
+.containerBtn {
+  min-width: 20rem;
+}
+@media (min-width: 1024px) {
+  #header {
+    min-height: 33rem;
+  }
+  .containerHeaderMsg {
+    align-items: center;
+    justify-content: center;
+    min-height: 30rem;
+    max-width: 25rem;
+    margin: 3rem;
+  }
+  span {
+    font-size: 3.5rem;
+  }
+  .carouselImg {
+    min-height: 30rem;
+  }
+  .headerMsg {
+    font-weight: 500;
+  }
+}
