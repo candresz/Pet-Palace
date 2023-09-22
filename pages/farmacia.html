@@ -28,11 +28,11 @@
     <link rel="shortcut icon" href="./img/bone.png" type="image/x-icon" />
   </head>
   <body>
-    <div>
+    <div id="app">
       <header>
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">LOGO</a>
+            <a class="navbar-brand" href="#"><img src="../img/petshop_logo.png" alt="petshop_logo" id="logo"></a>
             <button
               class="navbar-toggler"
               type="button"
@@ -65,134 +65,157 @@
           </div>
         </nav>
       </header>
-      <main class="min-vh-50 m-4">
-        <section>
-          <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
+      <main class="min-vh-50">
+        
+        <div class="backgroundImage">
+          <section>
+            <div id="carouselExampleCaptions" class="carousel slide">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleCaptions"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="../img/group-portrait-adorable-puppies.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>
+                      Some representative placeholder content for the first slide.
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="../img/tran-mau-tri-tam--81lVsfM4gQ-unsplash.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>
+                      Some representative placeholder content for the second
+                      slide.
+                    </p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="..." class="d-block w-100" alt="..." />
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>
+                      Some representative placeholder content for the third slide.
+                    </p>
+                  </div>
+                </div>
+              </div>
               <button
+                class="carousel-control-prev"
                 type="button"
                 data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
               <button
+                class="carousel-control-next"
                 type="button"
                 data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="../img/group-portrait-adorable-puppies.jpg"
-                  class="d-block w-100"
-                  alt="..."
+          </section>
+          <div class="m-4">
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <div class="col-4">
+                <div class="dropdown">
+                  <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                  >
+                      $Min - $Max
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li class="dropdown-item">
+                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="todos" value="Todos" autocomplete="off" v-model="valorSeleccionado">
+                        <label class="btn" for="todos">Todos los precios</label>
+                      </li>
+                      <li class="dropdown-item">
+                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="hasta500" value="500" autocomplete="off" v-model="valorSeleccionado">
+                        <label class="btn" for="hasta500">Hasta $500</label>
+                      </li>
+                      <li class="dropdown-item">
+                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="hasta1500" value="1500" autocomplete="off" v-model="valorSeleccionado">
+                        <label class="btn" for="hasta1500">Hasta $1500</label>
+                      </li>
+                      <li class="dropdown-item">
+                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="hasta3000" value="3000" autocomplete="off" v-model="valorSeleccionado">
+                        <label class="btn" for="hasta3000">Hasta $3000</label>
+                      </li>
+                  </ul>
+              </div>
+              </div>
+      
+              <div>
+                <input
+                  class="form-control"
+                  type="text"
+                  aria-label="readonly input example"
+                  v-model="valorInput"
                 />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>
-                    Some representative placeholder content for the first slide.
-                  </p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="../img/tran-mau-tri-tam--81lVsfM4gQ-unsplash.jpg"
-                  class="d-block w-100"
-                  alt="..."
-                />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>
-                    Some representative placeholder content for the second
-                    slide.
-                  </p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>
-                    Some representative placeholder content for the third slide.
-                  </p>
-                </div>
               </div>
             </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </section>
-        <div class="d-flex justify-content-between align-items-center mt-2">
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              $Min - $Max
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Hasta $500</a></li>
-              <li><a class="dropdown-item" href="#">Hasta $1500</a></li>
-              <li><a class="dropdown-item" href="#">Hasta $3000</a></li>
-            </ul>
-          </div>
-          <div>
-            <input
-              class="form-control"
-              type="text"
-              aria-label="readonly input example"
-            />
-          </div>
-        </div>
-        <section>
-          <div class="cardsContainer">
-            <div class="card" style="width: 18rem">
-              <img src="../img/testing1.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title cardFont">Card title</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+            <section class="d-flex flex-wrap gap-5 justify-content-center">
+              <div class="cardsContainer cartas align-items-center" v-cloak>
+                <div v-for="producto of productosFarmaciaFiltrados" class="card cardHeight" style="width: 18rem">
+                  <img :src="producto.imagen" class="card-img-top imgHeight p-3" :alt="producto.producto" />
+                  <div class="card-body  d-flex flex-column justify-content-center align-items-center">
+                    <div class="alturaTexto">
+                      <h5 class="card-title cardFont">{{producto.producto}}</h5>
+                    </div>
+                    <p class="fs-4">${{producto.precio}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
               </div>
-            </div>
+            </section>
           </div>
-        </section>
+          </div>
+          
+        
       </main>
       <footer
         id="footer"
@@ -226,5 +249,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="../JS/farmacia.js"></script>
   </body>
 </html>

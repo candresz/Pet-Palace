@@ -8,6 +8,7 @@
 
 * {
   font-family: "Montserrat", sans-serif;
+
 }
 .cardFont {
   font-family: var(--secondFont);
@@ -166,4 +167,30 @@ span {
   .headerMsg {
     font-weight: 500;
   }
+}
+
+#logo {
+  height: 6rem;
+}
+
+.imgHeight {
+  min-height: 30vh;
+  max-height: 30vh;
+  object-fit: cover;
+}
+
+.cardHeight{
+  min-height: 55vh;
+  max-height: 55vh;
+}
+
+.alturaTexto {
+  min-height: 8vh;
+  max-height: 8vh;
+}
+
+.backgroundImage {
+  background-image: url(../img/pawsBackground.avif);
+  background-repeat: no-repeat;
+  background-position: center;
 }
