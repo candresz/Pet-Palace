@@ -7,7 +7,8 @@ createApp({
             productosFarmacia: [],
             productosFarmaciaFiltrados: [],
             valorSeleccionado: "",
-            valorInput: ""
+            valorInput: "",
+            prueba: []
         };
     },
 
@@ -27,17 +28,17 @@ createApp({
     methods: {
         filtroCheck(valorCheck, listaProductos) {
             if (valorCheck === "Todos") {
-                return listaProductos
+                return listaProductos;
             }
-            return listaProductos.filter(producto => producto.precio <= parseInt(valorCheck));
+            else return listaProductos.filter(producto => producto.precio <= parseInt(valorCheck));
         },
-        // filtroSearch(valorInput, listaProductos) {
-        //     return listaProductos.filter(producto => producto.producto.includes(valorInput));
-        // },
+        filtroSearch(valorInput, listaProductos) {
+            return listaProductos.filter(product => product.producto.toLowerCase().includes(valorInput.toLowerCase()));
+        },
         filtroCruzado() {
             const listaProductosChecks = this.filtroCheck(this.valorSeleccionado, this.productosFarmacia);
-            // const listaProductosSearch = this.filtroSearch(this.valorInput, listaProductosChecks);
-            this.productosFarmaciaFiltrados = listaProductosChecks;
+            const listaProductosSearch = this.filtroSearch(this.valorInput, listaProductosChecks);
+            this.productosFarmaciaFiltrados = listaProductosSearch;
             // console.log(this.productosFarmaciaFiltrados);
         }
     },

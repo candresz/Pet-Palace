@@ -169,21 +169,17 @@
                       $Min - $Max
                   </button>
                   <ul class="dropdown-menu">
-                      <li class="dropdown-item">
-                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="todos" value="Todos" autocomplete="off" v-model="valorSeleccionado">
+                      <li @change="filtroCruzado" class="dropdown-item">
+                        <input type="radio" class="btn-check w-100" name="options-base" id="todos" value="Todos" autocomplete="off" v-model="valorSeleccionado">
                         <label class="btn" for="todos">Todos los precios</label>
                       </li>
-                      <li class="dropdown-item">
-                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="hasta500" value="500" autocomplete="off" v-model="valorSeleccionado">
-                        <label class="btn" for="hasta500">Hasta $500</label>
+                      <li @change="filtroCruzado" class="dropdown-item">
+                        <input type="radio" class="btn-check w-100" name="options-base" id="hasta500" value="2000" autocomplete="off" v-model="valorSeleccionado">
+                        <label class="btn" for="hasta500">Hasta $2000</label>
                       </li>
-                      <li class="dropdown-item">
-                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="hasta1500" value="1500" autocomplete="off" v-model="valorSeleccionado">
-                        <label class="btn" for="hasta1500">Hasta $1500</label>
-                      </li>
-                      <li class="dropdown-item">
-                        <input @click="filtroCruzado" type="radio" class="btn-check w-100" name="options-base" id="hasta3000" value="3000" autocomplete="off" v-model="valorSeleccionado">
-                        <label class="btn" for="hasta3000">Hasta $3000</label>
+                      <li @change="filtroCruzado" class="dropdown-item">
+                        <input type="radio" class="btn-check w-100" name="options-base" id="hasta1500" value="2500" autocomplete="off" v-model="valorSeleccionado">
+                        <label class="btn" for="hasta1500">Hasta $2500</label>
                       </li>
                   </ul>
               </div>
@@ -195,6 +191,7 @@
                   type="text"
                   aria-label="readonly input example"
                   v-model="valorInput"
+                  @input="filtroCruzado"
                 />
               </div>
             </div>
@@ -210,6 +207,7 @@
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>
+                <h3 v-if="productosFarmaciaFiltrados.length === 0">No hay productos</h3>
               </div>
             </section>
           </div>
