@@ -5,7 +5,7 @@ createApp({
       return {
         productos: [],
         cualquiera: null,
-        productosFarmacia: []
+        productosJugueteria: []
       }
     },
     created(){
@@ -14,9 +14,9 @@ createApp({
         .then( ( data )  => {
             this.productos = data
             //console.log(this.productos)
-            let categoria = 'farmacia'
-            this.productosFarmacia = this.productos.filter(producto => producto.categoria == categoria)
-            console.log(productosFarmacia)
+            let categoria = 'jugueteria'
+            this.productosJugueteria = this.productos.filter(producto => producto.categoria == categoria)
+            console.log(this.productosJugueteria)
         })
         .catch(error => console.log(error))
     },
