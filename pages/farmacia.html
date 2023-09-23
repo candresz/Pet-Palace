@@ -30,6 +30,7 @@
   <body>
     <div id="app">
       {{filtarCarrito}}
+      {{calcularTotal}}
       <header>
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid d-flex justify-content-between">
@@ -90,7 +91,7 @@
                           <tr>
                             <th scope="col" class="h5">Producto</th>
                             <th scope="col">Categoria</th>
-                            <th scope="col">Cantidad</th>
+                            <th scope="col" class="text-center">Cantidad</th>
                             <th scope="col">Precio</th>
                           </tr>
                         </thead>
@@ -110,23 +111,25 @@
                             </td>
                             <td class="align-middle">
                               <div class="d-flex flex-row">
-                                <button class="btn btn-link px-2"
-                                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                <button class="btn btn-link px-2" @click="restarCompra(producto)">
                                   <i class="bi bi-dash-circle"></i>
                                 </button>
             
-                                <input readonly id="form1" min="0" name="quantity" value="1" type="number"
+                                <input readonly id="form1" name="quantity" :value="producto.catidadAComprar" type="number"
                                   class="form-control form-control-sm" style="width: 50px;" />
             
-                                <button class="btn btn-link px-2"
-                                  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                  <i class="bi bi-plus-circle"></i>
+                                <button class="btn btn-link px-2" @click="sumarCompra(producto)">
+                                  <i v-if="producto.catidadAComprar < producto.disponibles" class="bi bi-plus-circle"></i>
+                                  <i v-else class="bi bi-plus-circle text-danger"></i>
                                 </button>
                               </div>
                             </td>
                             <td class="align-middle">
-                              <p class="mb-0" style="font-weight: 500;">${{producto.precio}}</p>
+                              <p class="mb-0" style="font-weight: 500;">${{producto.precioCantidad}}</p>
                             </td>
+                          </tr>
+                          <tr>
+                            <td>Total: {{totalPrecioCarrito}}</td>
                           </tr>
                         </tbody>
                       </table>
