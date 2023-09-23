@@ -74,15 +74,14 @@
           </section>
           <div class="m-4">
             <div class="d-flex justify-content-between align-items-center mt-2">
-              <div class="col-4">
-                <div class="dropdown">
+              <div class="dropdown col-4">
                   <button
-                      class="btn btn-secondary dropdown-toggle"
+                      class="btn btn-secondary dropdown-toggle w-100"
                       type="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                   >
-                      $Min - $Max
+                      Filtro por precios
                   </button>
                   <ul class="dropdown-menu">
                       <li class="dropdown-item">
@@ -103,20 +102,20 @@
                       </li>
                   </ul>
               </div>
-              </div>
       
-              <div>
+              <div class="col-4">
                 <input
-                  class="form-control"
+                  class="form-control "
                   type="text"
                   aria-label="readonly input example"
+                  placeholder="Buscar por nombre"
                   v-model="valorInput"
                 />
               </div>
             </div>
             <section class="d-flex flex-wrap gap-5 justify-content-center">
-              <div class="cardsContainer cartas align-items-center" v-cloak>
-                <div v-for="producto of productosFarmaciaFiltrados" class="card cardHeight" style="width: 18rem">
+              <div class="cardsContainer cartas align-items-center" v-for="producto of productosFarmaciaFiltrados">
+                <div  class="card cardHeight" style="width: 18rem">
                   <img :src="producto.imagen" class="card-img-top imgHeight p-3" :alt="producto.producto" />
                   <div class="card-body  d-flex flex-column justify-content-center align-items-center">
                     <div class="alturaTexto">
