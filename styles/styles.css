@@ -191,6 +191,23 @@ span {
 
 .backgroundImage {
   background-image: url(../img/pawsBackground.avif);
-  background-repeat: no-repeat;
   background-position: center;
+}
+
+.anchoForm {
+  width: 100%;
+}
+
+.anchoFieldset {
+  width: 70%;
+}
+
+.tamañoMapa {
+  width: 100%;
+  height: 100%;
+}
+
+.tamañoSection {
+  height: 50vh;
+  width: 70%;
 }
