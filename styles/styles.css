@@ -33,9 +33,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: var(--fourthcolor);
-}
 /* Definir los colores de la animación */
 @keyframes changeColor {
   0% {
@@ -126,7 +123,6 @@ span {
   font-family: var(--secondFont);
   font-weight: bold;
   color: #f20574;
-  font-size: 3.5rem;
 }
 .carouselImg {
   width: 100%; /* Ancho del 100% */
@@ -210,4 +206,9 @@ span {
 .tamañoSection {
   height: 50vh;
   width: 70%;
+}
+
+.tamañoButton {
+  padding: 5px 10px; /* Puedes ajustar estos valores según tus necesidades */
+  font-size: 20px;
 }
