@@ -8,7 +8,6 @@
 
 * {
   font-family: "Montserrat", sans-serif;
-
 }
 .cardFont {
   font-family: var(--secondFont);
@@ -211,4 +210,29 @@ span {
 .tamañoButton {
   padding: 5px 10px; /* Puedes ajustar estos valores según tus necesidades */
   font-size: 20px;
+}
+
+.tituloJugueteria {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../img/group-portrait-adorable-puppies.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 28%;
+  font-weight: bold;
+}
+.tituloFarmacia {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../img/pets-pink.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 40%;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+#logoTitulo {
+  height: 15rem;
 }
