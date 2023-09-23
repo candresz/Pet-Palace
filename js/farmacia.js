@@ -74,7 +74,8 @@ createApp({
             if (producto.catidadAComprar === 1){
                 producto.catidadAComprar--;
                 producto.precioCantidad = producto.catidadAComprar*producto.precio
-                this.productoCarritoID =  this.productoCarritoID.filter(elemento => elemento !== producto._id);
+                this.productoCarritoID = this.productoCarritoID.filter(elemento => elemento !== producto._id);
+                this.filtarCarrito()
             }
             else{ 
                 producto.catidadAComprar--
