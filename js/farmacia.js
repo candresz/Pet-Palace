@@ -6,9 +6,12 @@ createApp({
             productos: [],
             productosFarmacia: [],
             productosFarmaciaFiltrados: [],
+            productosCarrito: [],
             valorSeleccionado: "",
             valorInput: "",
-            prueba: []
+            prueba: [],
+            productoCarritoID: [],
+            totalPrecioCarrito: 0
         };
     },
 
@@ -23,6 +26,7 @@ createApp({
                 this.productosFarmaciaFiltrados = [... this.productosFarmacia];
             })
             .catch((error) => console.log(error));
+            this.productoCarritoID = JSON.parse(localStorage.getItem('productoCarritoID')) || [];
     },
 
     methods: {
@@ -40,6 +44,22 @@ createApp({
             const listaProductosSearch = this.filtroSearch(this.valorInput, listaProductosChecks);
             this.productosFarmaciaFiltrados = listaProductosSearch;
             // console.log(this.productosFarmaciaFiltrados);
+        },
+        agregarCarrito(producto) {
+            if (producto.disponibles > 0) {
+                this.productoCarritoID.push(producto._id);
+                localStorage.setItem("productoCarritoID", JSON.stringify(this.productoCarritoID));
+            }
+        },
+        removerCarrito(producto) {
+            this.productoCarritoID =  this.productoCarritoID.filter(elemento => elemento !== producto._id);
+            localStorage.setItem("productoCarritoID", JSON.stringify(this.productoCarritoID));
         }
     },
+
+    computed: {
+        filtarCarrito() {
+            this.productosCarrito = this.productosFarmaciaFiltrados.filter(producto => this.productoCarritoID.includes(producto._id))
+        }
+    }
 }).mount("#app");

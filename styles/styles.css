@@ -23,7 +23,8 @@
   background-position: center;
   min-height: 25rem;
 }
-button {
+
+/* button { esto debe ser del home - cambiar etiqueta a clase -
   background-color: var(--thirdcolor);
   color: white;
   border: none;
@@ -31,11 +32,11 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-button:hover {
+} */
+ 
+/* button:hover { esto debe ser del home - cambiar etiqueta a clase -
   background-color: var(--fourthcolor);
-}
+} */
 /* Definir los colores de la animación */
 @keyframes changeColor {
   0% {
@@ -180,8 +181,8 @@ span {
 }
 
 .cardHeight{
-  min-height: 55vh;
-  max-height: 55vh;
+  min-height: 62vh;
+  max-height: 62vh;
 }
 
 .alturaTexto {
@@ -193,4 +194,33 @@ span {
   background-image: url(../img/pawsBackground.avif);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.btn--mod {
+  color: #fff;
+  background-color: var(--thirdcolor);
+  border-radius: 0.5rem;
+  border: transparent solid 1px;
+  padding: 0.5rem;
+}
+
+.btn--mod:active {
+  background-color: transparent;
+  border: solid 1px var(--thirdcolor);
+  color: var(--thirdcolor);
+}
+
+.carrito {
+  position: fixed;
+  bottom: 0.75rem;
+  right: 1.3rem;
+  z-index: 1;
+}
+
+.carrito i {
+  font-size: 3rem;
+}
+
+.canvas--mod {
+  width: 800px !important;
 }

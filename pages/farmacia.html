@@ -29,9 +29,10 @@
   </head>
   <body>
     <div id="app">
+      {{filtarCarrito}}
       <header>
         <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
+          <div class="container-fluid d-flex justify-content-between">
             <a class="navbar-brand" href="#"><img src="../img/petshop_logo.png" alt="petshop_logo" id="logo"></a>
             <button
               class="navbar-toggler"
@@ -66,7 +67,77 @@
         </nav>
       </header>
       <main class="min-vh-50">
-        
+        <div class="carrito">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <i class="bi bi-cart-dash"></i>
+          </button>
+        </div>
+        <div class="offcanvas offcanvas-start canvas--mod" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <!-- Contenido -->
+            <section class="h-100 h-custom">
+              <div class="container h-100 py-5">
+                <div class="row d-flex justify-content-center align-items-start h-100">
+                  <div class="col">
+            
+                    <div v-if="productosCarrito.length > 0" class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="h5">Producto</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-for="producto of productosCarrito">
+                            <th scope="row">
+                              <div class="d-flex align-items-center">
+                                <img :src="producto.imagen" class="img-fluid rounded-3"
+                                  style="width: 120px;" alt="Book">
+                                <div class="flex-column ms-4">
+                                  <p class="mb-2">{{producto.producto}}</p>
+                                </div>
+                              </div>
+                            </th>
+                            <td class="align-middle">
+                              <p class="mb-0" style="font-weight: 500;">{{producto.categoria}}</p>
+                            </td>
+                            <td class="align-middle">
+                              <div class="d-flex flex-row">
+                                <button class="btn btn-link px-2"
+                                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                  <i class="bi bi-dash-circle"></i>
+                                </button>
+            
+                                <input readonly id="form1" min="0" name="quantity" value="1" type="number"
+                                  class="form-control form-control-sm" style="width: 50px;" />
+            
+                                <button class="btn btn-link px-2"
+                                  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                  <i class="bi bi-plus-circle"></i>
+                                </button>
+                              </div>
+                            </td>
+                            <td class="align-middle">
+                              <p class="mb-0" style="font-weight: 500;">${{producto.precio}}</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <h4 v-else class="text-center">No hay productos en el carrito</h4>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
         <div class="backgroundImage">
           <section>
             <div id="carouselExampleCaptions" class="carousel slide">
@@ -198,13 +269,19 @@
             <section class="d-flex flex-wrap gap-5 justify-content-center">
               <div class="cardsContainer cartas align-items-center" v-cloak>
                 <div v-for="producto of productosFarmaciaFiltrados" class="card cardHeight" style="width: 18rem">
+                  <div class="m-1 p-1">
+                    <span v-if="producto.disponibles <= 5" class="badge text-bg-danger">Últimas {{producto.disponibles}} unidades</span>
+                  </div>
                   <img :src="producto.imagen" class="card-img-top imgHeight p-3" :alt="producto.producto" />
-                  <div class="card-body  d-flex flex-column justify-content-center align-items-center">
+                  <div class="card-body d-flex flex-column justify-content-center align-items-center">
                     <div class="alturaTexto">
                       <h5 class="card-title cardFont">{{producto.producto}}</h5>
                     </div>
                     <p class="fs-4">${{producto.precio}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="d-flex aling-items-center">
+                      <button v-if="!productoCarritoID.includes(producto._id)" @click="agregarCarrito(producto)" class="btn--mod">Agregar a carrito</button>
+                      <button v-else class="btn--mod" @click="removerCarrito(producto)">Quitar del carrito</button>
+                    </div>
                   </div>
                 </div>
                 <h3 v-if="productosFarmaciaFiltrados.length === 0">No hay productos</h3>
@@ -236,9 +313,6 @@
             alt="Whatsapp picture"
           />
         </div>
-        <a class="dflex" href="#">
-          <i class="bi bi-envelope-at envelope"></i>
-        </a>
       </footer>
     </div>
 
