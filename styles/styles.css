@@ -27,15 +27,15 @@ button {
   background-color: var(--thirdcolor);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 6px 20px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: var(--fourthcolor);
-}
+#boton-inicio{
+  font-size:35px !important;
+}  
 /* Definir los colores de la animación */
 @keyframes changeColor {
   0% {
@@ -126,7 +126,6 @@ span {
   font-family: var(--secondFont);
   font-weight: bold;
   color: #f20574;
-  font-size: 3.5rem;
 }
 .carouselImg {
   width: 100%; /* Ancho del 100% */
