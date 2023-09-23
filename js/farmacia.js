@@ -31,6 +31,7 @@ createApp({
             })
             .catch((error) => console.log(error));
             this.productoCarritoID = JSON.parse(localStorage.getItem('productoCarritoID')) || [];
+            this.productosCarrito = JSON.parse(localStorage.getItem('productosCarrito')) || [];
     },
 
     methods: {
@@ -55,6 +56,7 @@ createApp({
                 producto.catidadAComprar++;
                 producto.precioCantidad = producto.catidadAComprar*producto.precio
                 localStorage.setItem("productoCarritoID", JSON.stringify(this.productoCarritoID));
+                this.filtarCarrito()
             }
         },
         removerCarrito(producto) {
@@ -78,17 +80,20 @@ createApp({
                 producto.catidadAComprar--
                 producto.precioCantidad = producto.catidadAComprar*producto.precio
             };
-        }
-    },
-
-    computed: {
+        },
         filtarCarrito() {
             this.productosCarrito = this.productosFarmaciaFiltrados.filter(producto => this.productoCarritoID.includes(producto._id))
         },
+    },
+
+    computed: {
         calcularTotal() {
             this.totalPrecioCarrito = this.productosCarrito.reduce((totalAcumulado, producto) =>
                 totalAcumulado + producto.precioCantidad
              , 0)
+        },
+        guardarDatos() {
+            localStorage.setItem("productosCarrito", JSON.stringify(this.productosCarrito));
         }
     }
 }).mount("#app");
