@@ -174,7 +174,7 @@ span {
   object-fit: cover;
 }
 
-.cardHeight{
+.cardHeight {
   min-height: 55vh;
   max-height: 55vh;
 }
@@ -240,13 +240,12 @@ span {
   font-weight: bold;
 }
 
-
 #logoTitulo {
   height: 15rem;
 }
 
-@media (min-width: 320px) and (max-width: 728px){
-  .breakpointTitulo{
+@media (min-width: 320px) and (max-width: 728px) {
+  .breakpointTitulo {
     display: flex;
     justify-content: center !important;
     align-items: center !important;
@@ -257,12 +256,25 @@ span {
   .breakpointTitulo p {
     text-align: center;
   }
-  .tituloFarmacia{
+  .tituloFarmacia {
     justify-content: center !important;
     align-items: center !important;
     background-position: center;
   }
-  .breakpointTitulo{
-
+  .breakpointTitulo {
   }
+}
+.carrito {
+  position: fixed;
+  bottom: 0.75rem;
+  right: 1.3rem;
+  z-index: 1;
+}
+
+.carrito i {
+  font-size: 3rem;
+}
+
+.canvas--mod {
+  width: 800px !important;
 }
