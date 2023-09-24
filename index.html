@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pet Shop Name</title>
+    <title>PetPalace</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -39,70 +39,85 @@
         </nav>
         <div class="containerHeaderMsg">
           <h1 class="headerMsg">
-            <span>¡Bienvenido</span>
-            a nuestro Pet Shop en línea! Haz clic, navega y descubre todo para
-            tu mascota. ¡Comienza ya!
+            <span class="bienvenido">¡Bienvenido</span>
+            a nuestro <span class="verde">PetPalace</span> en línea! Haz clic,
+            navega y descubre todo para tu mascota. ¡Comienza ya!
           </h1>
           <div
             class="d-flex justify-content-center align-items-center gap-2 mt-3 containerBtn"
           >
             <a href="pages/farmacia.html"
-              ><button type="button">Farmacia</button></a
+              ><button type="button" class="hoverBtn">Farmacia</button></a
             >
             <a href="pages/jugueteria.html"
-              ><button type="button">Jugueteria</button></a
+              ><button type="button" class="hoverBtn">Jugueteria</button></a
             >
           </div>
         </div>
       </header>
       <main class="min-vh-50 m-4">
-        <section
-          class="d-flex flex-column justify-content-center align-items-center d-md-flex flex-md-row about-section"
-        >
-          <div class="about-item">
-            <img
-              src="./img/pet-shop.png"
-              alt="imagen acerca de nosotros"
-              class="about-image"
-            />
-            <h2 class="about-title">Acerca de nosotros</h2>
-            <p class="about-description">
-              Somos amantes de las mascotas. En nuestro Pet Shop, estamos
-              dedicados a tu amigo peludo. Descubre calidad y amor en cada
-              producto. Bienvenido a nuestra familia.
-            </p>
-          </div>
+        <section class="about-section">
+          <div class="container">
+            <div class="gapSection d-lg-flex flex-lg-row">
+              <div class="">
+                <div
+                  class="about-item text-center d-flex flex-column justify-content-center align-items-center"
+                >
+                  <img
+                    src="./img/pet-shop.png"
+                    alt="imagen acerca de nosotros"
+                    class="about-image"
+                  />
+                  <h2 class="about-title">Acerca de nosotros</h2>
+                  <p class="about-description">
+                    Somos amantes de las mascotas. En nuestro Pet Shop, estamos
+                    dedicados a tu amigo peludo. Descubre calidad y amor en cada
+                    producto. Bienvenido a nuestra familia.
+                  </p>
+                </div>
+              </div>
 
-          <div class="about-item">
-            <img
-              src="./img/veterinary.png"
-              alt="imagen acerca de nuestra farmacia"
-              class="about-image"
-            />
-            <h2 class="about-title">Farmacia Veterinaria Confiable</h2>
-            <p class="about-description">
-              Mantén a tu mascota saludable con nuestra amplia selección de
-              medicamentos y productos veterinarios. Contamos con productos de
-              calidad y asesoramiento profesional para garantizar el bienestar
-              de tu amigo peludo.
-            </p>
-          </div>
+              <div class="d-flex">
+                <div
+                  class="about-item text-center d-flex flex-column justify-content-center align-items-center"
+                >
+                  <img
+                    src="./img/veterinary.png"
+                    alt="imagen acerca de nuestra farmacia"
+                    class="about-image"
+                  />
+                  <h2 class="about-title">Farmacia Veterinaria Confiable</h2>
+                  <p class="about-description">
+                    Mantén a tu mascota saludable con nuestra amplia selección
+                    de medicamentos y productos veterinarios. Contamos con
+                    productos de calidad y asesoramiento profesional para
+                    garantizar el bienestar de tu amigo peludo.
+                  </p>
+                </div>
+              </div>
 
-          <div class="about-item">
-            <img
-              src="./img/dog.png"
-              alt="imagen acerca de nuestra farmacia"
-              class="about-image"
-            />
-            <h2 class="about-title">Asesoramiento Nutricional</h2>
-            <p class="about-description">
-              La alimentación es clave para la salud de tu mascota. Nuestros
-              especialistas te guiarán para elegir los mejores alimentos y
-              suplementos, adaptados a las necesidades específicas de tu
-              compañero peludo.
-            </p>
+              <div class="">
+                <div
+                  class="about-item text-center d-flex flex-column justify-content-center align-items-center"
+                >
+                  <img
+                    src="./img/dog.png"
+                    alt="imagen acerca de nuestra farmacia"
+                    class="about-image"
+                  />
+                  <h2 class="about-title">Asesoramiento Nutricional</h2>
+                  <p class="about-description">
+                    La alimentación es clave para la salud de tu mascota.
+                    Nuestros especialistas te guiarán para elegir los mejores
+                    alimentos y suplementos, adaptados a las necesidades
+                    específicas de tu compañero peludo.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
+
         <section class="mt-3">
           <h2 class="carousel-title">Nuestros Clientes</h2>
           <div id="carouselExampleFade" class="carousel slide carousel-fade">
