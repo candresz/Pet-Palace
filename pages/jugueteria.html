@@ -29,7 +29,9 @@
   </head>
   <body>
     <div id="app">
-      {{calcularTotal}} {{guardarDatos}}
+      <div v-cloak>
+        {{calcularTotal}} {{guardarDatosCarrito}} {{guardarDatosCarritoID}}
+      </div>
       <header>
         <header>
           <nav class="navbar navbar-expand-lg">
@@ -282,9 +284,9 @@
             <section class="d-flex flex-wrap gap-5 justify-content-center">
               <div
                 class="d-flex flex-wrap gap-5 justify-content-center cardsContainer cartas align-items-center"
-                v-cloak
               >
                 <div
+                  v-cloak 
                   v-for="producto of productosFarmaciaFiltrados"
                   class="card cardHeight"
                   style="width: 18rem"
@@ -292,9 +294,19 @@
                   <div class="alturaUnidadesLimite"></div>
                   <div class="m-1 p-1 alturaUnidadesLimite">
                     <span
-                      v-if="producto.disponibles <= 5"
-                      class="badge text-bg-danger"
+                      v-if=" producto.disponibles >= 2 && producto.disponibles <= 5"
+                      class="badge unidades"
                       >Últimas {{producto.disponibles}} unidades</span
+                    >
+                    <span
+                      v-else-if=" producto.disponibles === 1"
+                      class="badge text-bg-danger"
+                      >Última unidad</span
+                    >
+                    <span
+                      v-else-if=" producto.disponibles === 0"
+                      class="badge text-bg-danger"
+                      >Agotados</span
                     >
                   </div>
                   <img

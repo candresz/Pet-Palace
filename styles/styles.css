@@ -309,6 +309,9 @@ span {
 .colorBtn:hover {
   background-color: var(--secondcolor);
 }
+.colorBtn:active {
+  background-color: var(--secondcolor) !important;
+}
 
 .hoverBtn:hover {
   background-color: var(--secondcolor);
@@ -358,4 +361,12 @@ span {
 }
 .btnForm:hover {
   background-color: var(--secondcolor);
+}
+
+.unidades {
+  background-color: var(--thirdcolor);
+}
+
+[v-cloak] {
+  display: none;
 }
