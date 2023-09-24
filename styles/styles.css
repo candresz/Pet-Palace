@@ -32,9 +32,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: var(--fourthcolor);
-}
 /* Definir los colores de la animación */
 @keyframes changeColor {
   0% {
@@ -97,35 +94,46 @@ h2.carousel-title {
 }
 
 /* Estilos de cada elemento "Acerca de nosotros" */
-.about-item {
-  text-align: center;
+.about-section {
+  padding: 4rem 0;
+  background-color: var(--secondcolor); /* Color de fondo */
 }
 
-/* Estilos de las imágenes */
+.about-item {
+  background-color: #fff; /* Fondo de cada elemento */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.3s ease; /* Efecto de transición */
+  min-height: 27rem;
+  max-height: 27rem;
+}
+
+.about-item:hover {
+  transform: translateY(-10px); /* Efecto de elevación en el hover */
+}
+
 .about-image {
   max-width: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-/* Estilos de los títulos */
 .about-title {
   font-family: var(--secondFont);
-  font-size: 2.5rem;
-
-  color: #8c031c;
+  font-size: 1.5rem;
+  color: var(--thirdcolor); /* Color del título */
+  margin-bottom: 15px;
 }
 
-/* Estilos de las descripciones */
 .about-description {
   font-size: 1rem;
-  color: #666;
-  line-height: 1.4;
+  color: #777; /* Color del texto descriptivo */
 }
+
 span {
   font-family: var(--secondFont);
   font-weight: bold;
   color: #f20574;
-  font-size: 3.5rem;
 }
 .carouselImg {
   width: 100%; /* Ancho del 100% */
@@ -145,6 +153,7 @@ span {
 }
 .containerBtn {
   min-width: 20rem;
+  padding-bottom: 2rem;
 }
 @media (min-width: 1024px) {
   #header {
@@ -166,4 +175,198 @@ span {
   .headerMsg {
     font-weight: 500;
   }
+}
+
+/* Establecer un tamaño y rotación inicial para el logo */
+#logo {
+  width: 100px; /* Tamaño inicial */
+  height: 100px; /* Tamaño inicial */
+  transition: transform 0.3s, width 0.3s, height 0.3s; /* Transición suave de 0.3 segundos */
+}
+
+/* Establecer la animación al pasar el mouse sobre el logo */
+.logo-animation:hover {
+  transform: rotate(360deg) scale(1.2); /* Rotación de 360 grados y aumento del tamaño al 120% */
+}
+
+.imgHeight {
+  min-height: 30vh;
+  max-height: 30vh;
+  object-fit: cover;
+}
+
+.cardHeight {
+  min-height: 65vh;
+  max-height: 65vh;
+}
+
+.alturaTexto {
+  min-height: 8vh;
+  max-height: 8vh;
+}
+
+.backgroundImage {
+  background-image: url(../img/pawsBackground.avif);
+  background-position: center;
+}
+
+.anchoForm {
+  width: 100%;
+}
+
+.anchoFieldset {
+  width: 70%;
+}
+
+.tamañoMapa {
+  width: 100%;
+  height: 100%;
+}
+
+.tamañoSection {
+  height: 50vh;
+  width: 70%;
+}
+
+.tamañoButton {
+  padding: 5px 10px; /* Puedes ajustar estos valores según tus necesidades */
+  font-size: 20px;
+}
+
+.tituloJugueteria {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../img/group-portrait-adorable-puppies.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 28%;
+  font-weight: bold;
+}
+.tituloJugueteria p {
+  text-align: center;
+}
+
+.tituloFarmacia p {
+  text-align: center;
+}
+
+.tituloFarmacia {
+  width: 100%;
+  height: 50vh;
+  background-image: url(../img/pets-pink.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 40%;
+  color: #fff;
+  font-weight: bold;
+}
+
+#logoTitulo {
+  height: 15rem;
+}
+
+@media (min-width: 320px) and (max-width: 728px) {
+  .breakpointTitulo {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+    padding-top: 0 !important;
+    align-self: center !important;
+  }
+  .breakpointTitulo p {
+    text-align: center;
+  }
+  .tituloFarmacia {
+    justify-content: center !important;
+    align-items: center !important;
+    background-position: center;
+  }
+  .bienvenido,
+  .verde {
+    font-size: 3rem;
+  }
+}
+.carrito {
+  position: fixed;
+  bottom: 0.75rem;
+  right: 1.3rem;
+  z-index: 1;
+}
+
+.carrito i {
+  font-size: 3rem;
+}
+
+.canvas--mod {
+  width: 800px !important;
+}
+
+.colorBtn {
+  background-color: var(--thirdcolor);
+  border: none;
+}
+.colorBtn:hover {
+  background-color: var(--secondcolor);
+}
+.colorBtn:active {
+  background-color: var(--secondcolor) !important;
+}
+
+.hoverBtn:hover {
+  background-color: var(--secondcolor);
+}
+
+.alturaUnidadesLimite {
+  max-height: 5px;
+}
+
+.verde {
+  color: var(--secondcolor);
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+  margin: 0; /* Elimina el margen predeterminado del título */
+}
+
+.bienvenido {
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+  margin: 0; /* Elimina el margen predeterminado del título */
+}
+@media (min-width: 765px) {
+  .about-section {
+    padding: 4rem 0;
+    background-color: var(--secondcolor); /* Color de fondo */
+    display: flex;
+  }
+}
+@media (min-width: 728px) {
+  .bienvenido,
+  .verde {
+    font-size: 3rem;
+  }
+}
+
+.gapSection {
+  gap: 4rem;
+}
+
+.inputSm {
+  max-width: 10rem;
+}
+.btnForm {
+  background-color: var(--thirdcolor);
+  width: 8rem;
+  font-weight: bold;
+}
+.btnForm:hover {
+  background-color: var(--secondcolor);
+}
+
+.unidades {
+  background-color: var(--thirdcolor);
+}
+
+[v-cloak] {
+  display: none;
 }

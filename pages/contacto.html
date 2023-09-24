@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="shortcut icon" href="../img/bone.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="backgroundImage">
+      <header>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand" href="#"
+              ><img src="../img/petshop_logo.png" id="logo" alt="petshop_logo"
+            /></a>
+            <button
+              class="navbar-toggler tamañoButton"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="../index.html"
+                  >
+                    Inicio
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../pages/farmacia.html">Farmacia</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../pages/jugueteria.html"
+                    >Jugueteria</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contacto</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main
+        class="min-vh-100 m-4 d-flex flex-column justify-content-center align-items-center"
+      >
+        <div
+          class="anchoForm d-flex flex-column flex-wrap justify-content-center align-items-center"
+        >
+          <form
+            action=""
+            class="form_bg d-flex flex-column flex-wrap align-items-center gap-2 p-3 rounded anchoForm"
+          >
+            <fieldset class="d-flex flex-column anchoFieldset">
+              <label for="nombre"><strong>Nombre:</strong></label>
+              <input type="text" id="nombre" class="form-control" />
+
+              <label for="apellido"><strong>Apellido:</strong></label>
+              <input type="text" id="apellido" class="form-control" />
+            </fieldset>
+            <fieldset class="d-flex flex-column anchoFieldset">
+              <label for="correo"><strong>Correo:</strong></label>
+              <input type="text" id="correo" class="form-control" />
+            </fieldset>
+            <fieldset class="d-flex flex-column anchoFieldset">
+              <label for="mascotaNombre"
+                ><strong>Nombre de tu mascota:</strong></label
+              >
+              <input type="text" id="mascotaNombre" class="form-control" />
+            </fieldset>
+            <fieldset class="d-flex flex-column anchoFieldset">
+              <label for="mensaje"><strong>Mensaje:</strong></label>
+              <textarea
+                name="mensaje"
+                id=""
+                cols="30"
+                rows="10"
+                class="form-control"
+              ></textarea>
+            </fieldset>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btnForm"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Enviar
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Tu mensaje se ha enviado con exito!
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    Nos pondremos en contacto contigo, lo antes posible.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <section
+            class="d-flex justify-content-center d-flex flex-column mt-5 tamañoSection"
+          >
+            <h5 class="align-self-center">
+              <i class="bi bi-geo-alt-fill"></i
+              ><strong>Donde encontrarnos:</strong>
+            </h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11046.764398672389!2d-58.403426893858054!3d-34.598529593014376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9158e82c41%3A0x6a1cd58fa7e6383d!2sParaguay%202334%205%20f%2C%20C1121ABL%20CABA%2C%20Argentina!5e0!3m2!1ses-419!2scl!4v1695482206725!5m2!1ses-419!2scl"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="tamañoMapa"
+            ></iframe>
+          </section>
+        </div>
+      </main>
+      <footer
+        id="footer"
+        class="d-flex justify-content-between align-items-center p-3"
+      >
+        <div class="d-flex gap-3 imgfooter">
+          <img
+            class="footerpics"
+            src="../img/facebook.png"
+            alt="Facebook picture"
+          />
+          <img
+            class="footerpics"
+            src="../img/instagram.png"
+            alt="Instagram picture"
+          />
+          <img
+            class="footerpics"
+            src="../img/whatsapp.png"
+            alt="Whatsapp picture"
+          />
+        </div>
+        <a class="dflex" href="#">
+          <i class="bi bi-envelope-at envelope"></i>
+        </a>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
