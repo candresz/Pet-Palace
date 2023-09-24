@@ -153,6 +153,7 @@ span {
 }
 .containerBtn {
   min-width: 20rem;
+  padding-bottom: 2rem;
 }
 @media (min-width: 1024px) {
   #header {
@@ -176,8 +177,16 @@ span {
   }
 }
 
+/* Establecer un tamaño y rotación inicial para el logo */
 #logo {
-  height: 6rem;
+  width: 100px; /* Tamaño inicial */
+  height: 100px; /* Tamaño inicial */
+  transition: transform 0.3s, width 0.3s, height 0.3s; /* Transición suave de 0.3 segundos */
+}
+
+/* Establecer la animación al pasar el mouse sobre el logo */
+.logo-animation:hover {
+  transform: rotate(360deg) scale(1.2); /* Rotación de 360 grados y aumento del tamaño al 120% */
 }
 
 .imgHeight {
@@ -273,6 +282,10 @@ span {
     align-items: center !important;
     background-position: center;
   }
+  .bienvenido,
+  .verde {
+    font-size: 3rem;
+  }
 }
 .carrito {
   position: fixed;
@@ -324,7 +337,25 @@ span {
     display: flex;
   }
 }
+@media (min-width: 728px) {
+  .bienvenido,
+  .verde {
+    font-size: 3rem;
+  }
+}
 
 .gapSection {
-  gap: 7rem;
+  gap: 4rem;
+}
+
+.inputSm {
+  max-width: 10rem;
+}
+.btnForm {
+  background-color: var(--thirdcolor);
+  width: 8rem;
+  font-weight: bold;
+}
+.btnForm:hover {
+  background-color: var(--secondcolor);
 }
